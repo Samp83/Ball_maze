@@ -22,7 +22,7 @@ public class BallManager : MonoBehaviour
             Debug.Log("Victoire !");
             RespawnBallStart(); 
             ResetPlatformRotation();
-            //ShowWinScreen();
+            ShowWinScreen();
         }
         else if (other.CompareTag("Checkpoint"))
         {
@@ -59,6 +59,18 @@ public class BallManager : MonoBehaviour
         if (platform != null)
         {
             platform.transform.rotation = Quaternion.identity;
+        }
+    }
+
+    void ShowWinScreen()
+    {
+        TimerManager timerManager = FindObjectOfType<TimerManager>();
+        UIManager uiManager = FindObjectOfType<UIManager>();
+
+        if (timerManager != null && uiManager != null)
+        {
+            timerManager.StopTimer();
+            uiManager.ShowWinScreen(timerManager.GetTime());
         }
     }
 
