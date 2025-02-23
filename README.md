@@ -1,6 +1,6 @@
 # Ball_maze
  
-Short Ball game Maze.
+Short Ball Maze.game
  The player can rotate the platform on the left/right, front/back
  • Zfront
  • Sback
